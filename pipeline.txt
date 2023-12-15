@@ -11,7 +11,7 @@ pipeline {
            steps {
                script {
                    // Use the checkout step to clone the Git repository
-                   checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: GIT_REPO_URL]]])
+                  checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '40e70ee1-e6b2-4da7-b199-3de28af6dd65', url: 'https://github.com/snehithkolli/jenkins.git']])
                }
            }
        }
